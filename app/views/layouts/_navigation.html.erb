@@ -1,0 +1,52 @@
+<%= string_with_link(t('home'), root_path, :class => 'brand') %>
+<ul class="nav">
+   <li>
+    <%= string_with_link(t('statistics'), statistics_path)  %>
+    </li>
+   <li>
+    <%= string_with_link(t('airports'), airports_path)  %>
+    </li>
+    <li>
+    <%= string_with_link(t('search'), new_search_path)  %>
+    </li>
+    <li>
+    <%= string_with_link(t('users'), users_path)  %>
+    </li>
+    <li>
+    <%= string_with_link(t('contact'), contactus_path)  %>
+    </li>
+  <% if user_signed_in? || admin_signed_in? %>
+    <li>
+    <%= string_with_link(t('logout'), destroy_user_session_path, :method=>'delete') %>        
+    </li>
+  <% else %>
+    <li>
+    <%= string_with_link(t('login'), new_user_session_path)  %>  
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+    <%= string_with_link(t('mypage'), current_user) %> 
+    </li>
+  <% else %>
+    <li>
+    <%= string_with_link(t('signup'), new_user_registration_path)  %>
+    </li>
+  <% end %>
+  <% if admin_signed_in? %>
+  <li>
+    <%= link_to "Admin tools", admins_path %>
+  </li>
+  <%else%>
+  <li>
+    <%= link_to "Admin login", new_admin_session_path %>
+  </li>
+<%end%>
+  <li>
+    <% if I18n.locale == I18n.default_locale %>
+    <%= link_to "Finnish", url_for(:locale => 'fi' ) %>
+   <%else%>
+   <%= link_to "English", url_for(:locale => 'en' ) %>
+   <%end%>
+  </li>
+</ul>

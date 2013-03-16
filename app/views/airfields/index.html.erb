@@ -1,0 +1,32 @@
+<div class="page-header">
+<h1>All the airports<small> in our database</small></h1>
+</div>
+
+<table class="table">
+  <tr>
+    <th>City</th>
+    <th>Name</th>
+    <th>Zone</th>
+    <th>Country</th>
+    <th>Altitude</th>
+    <th>Iata</th>
+    <% if admin_signed_in? %>
+    <th></th>
+  <%end%>
+  </tr>
+
+<% @airfields.each do |airfield| %>
+  <tr>
+    <td><%= airfield.city %></td>
+    <td><%= link_to airfield.name, airfield %></td>
+    <td><%= airfield.zone %></td>
+    <td><%= airfield.country %></td>
+    <td><%= airfield.altitude %></td>
+    <td><%= airfield.iata_faa %></td>
+    <% if admin_signed_in? %>
+    <td><%= link_to 'Destroy', airfield, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <%end%>
+  </tr>
+<% end %>
+</table>
+

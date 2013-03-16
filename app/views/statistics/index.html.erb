@@ -1,0 +1,33 @@
+<div class="page-header">
+<h1>Awesome Statistics</h1>
+</div>
+<ul class="nav nav-tabs">
+<li><a href="#high" data-toggle="tab">Extreme Altitude Airports</a></li>
+  <li><a href="#profile" data-toggle="tab">Countries with Most Airports</a></li>
+  <li><a href="#messages" data-toggle="tab">Northernmost Airports</a></li>
+  <li><a href="#settings" data-toggle="tab">Southernmost Airports</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="high"><%= high_chart("my_id", @chart) %></div>
+  <div class="tab-pane" id="profile"><%= high_chart("my_id4", @chart2) do |c| %>
+          <%= raw "options.tooltip.formatter = function() {return '<b>'+ this.point.name +'</b>: '+ this.y +' %';}"  %>
+          <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 1) return this.point.name; }"  %>
+      <% end %></div>
+  <div class="tab-pane" id="messages">
+    <ol> 
+    <% @northern.each do |n| %>
+    <li>Name: <%= link_to n.name, n %> | City: <%=n.city %> | Country: <%=n.country %> | Latitude: <%=n.latitude %></li>
+  <%end%>
+    </ol>
+  </div>
+  <div class="tab-pane" id="settings">
+    <ol> 
+    <% @southern.each do |s| %>
+    <li>Name: <%= link_to s.name, s %> | City: <%=s.city %> | Country: <%=s.country %> | Latitude: <%=s.latitude %></li>
+  <%end%>
+    </ol>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+<div class="page-header">
+<h1>List of Reviews <small>for admin use</small></h1>
+</div>
+
+<table class="table">
+  <tr>
+    <th>Rating</th>
+    <th>Review</th>
+    <th>User</th>
+    <th>Airfield</th>
+    <th></th>
+  </tr>
+
+<% @reviews.each do |review| %>
+  <tr>
+    <td><%= review.rating %></td>
+    <td><%= review.review %></td>
+    <td><%= review.user_id %></td>
+    <td><%= review.airfield_id %></td>
+    <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

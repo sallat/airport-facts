@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airport Facts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+           <div class="social_networking">
+			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_counter addthis_pill_style"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50a2e7cb629c33a6"></script>
+		</div>
+        </div>
+      </div>
+    </div>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+        
+        </div>
+        <footer>
+            <%= render 'layouts/footer' %>
+          </footer>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  
+
+
+</body>
+</html>

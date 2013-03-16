@@ -1,0 +1,47 @@
+<div class="page-header">
+
+<h1><%= t :welcome %><small> <%= t :welcome_small_html %></small></h1>
+</div>
+
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><%=image_tag("schiphol.jpg")%>
+    <div class="carousel-caption">
+      <p3>Schiphol Airport</p3>
+    </div>
+    </div>
+    <div class="item"><%=image_tag("nepal.jpg")%>
+    <div class="carousel-caption">
+      <p3>Lukla Airport in Nepal.</p3>
+    </div>
+    </div>
+    <div class="item"><%=image_tag("helsinki.jpg")%>
+    <div class="carousel-caption">
+      <p3>Helsinki Airport</p3>
+    </div>
+    </div>
+    
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+<div class="page-header">
+
+<h2><%= t :about_us_html %> <small><%= t :and_what_html %></small></h2>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <p><%= t :text1_html %></p>
+  </div>
+  <div class="span4">
+    <p><%= t :text2_html %></p>
+  </div>
+  <div class="span4">
+    <p><%= t :text3_html %></p>
+  </div>
+</div>

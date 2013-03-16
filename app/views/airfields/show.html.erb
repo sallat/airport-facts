@@ -1,0 +1,92 @@
+<div class="page-header">
+<h1>Airport Details</h1>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+  <div class="span4">
+    <p>
+  <b>City:</b>
+  <%= @airfield.city %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @airfield.name %>
+</p>
+
+<p>
+  <b>Average user rating:</b>
+  <%= @avg %>
+</p>
+<p>
+  <b>Zone:</b>
+  <%= @airfield.zone %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @airfield.country %>
+</p>
+
+<p>
+  <b>Altitude:</b>
+  <%= @airfield.altitude %>
+</p>
+
+<p>
+  <b>Iaco:</b>
+  <%= @airfield.iaco %>
+</p>
+
+
+<p>
+  <b>Iata faa:</b>
+  <%= @airfield.iata_faa %>
+</p>
+  </div>
+<div class="span6">
+<%= gmaps({
+  "map_options" => {"auto_zoom" => false, "zoom" => 8 },
+  "markers" => {"data" => @json }
+})
+%>
+
+</div>
+  </div>
+</div>
+
+<div class="page-header">
+
+<h2>Reviews<small> for this airport</small></h2>
+</div>
+
+
+<% if user_signed_in? %>
+<%= button_to 'Add a New Review', new_review_path(:airfield_id => @airfield.id, :user_id => current_user.id)%>
+<% else %>
+<p> Please <%= link_to "sign in", new_user_session_path %> to add a review</p>
+<% end %>
+<div class="myreview">
+<% @reviews.each do |review| %>
+
+<blockquote>
+  <% if current_user == review.user || admin_signed_in? %>
+    <div class= "review_links">
+      <% if current_user == review.user %>
+            <%= button_to 'Edit', edit_review_path(review), :method => "get" %>
+            <%= button_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' } %>
+      <% elsif admin_signed_in? %>
+        <%= button_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' } %>
+      <%end%>
+    </div>
+    <% end %>
+<p><%= review.review %></p>
+  <small>By <%= review.user.name %></small>
+</blockquote>
+
+<%end%>
+</div>
+
+
+
+

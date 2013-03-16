@@ -1,0 +1,19 @@
+fi:
+  welcome: Tervetuloa
+  welcome_small_html: maailman lentokentt&#228;faktoihin!
+  about_us_html: Tietoa meist&#228;
+  and_what_html: ja mit&#228; voit l&#246;yt&#228;&#228; n&#228;ilt&#228; sivuilta
+  home: __Etusivu__
+  statistics: __Tilastoja__
+  airports: __Lentokentat__
+  search: __Etsi__
+  users: __Kayttajat__
+  contact: __Yhteystiedot__
+  login: __Kirjaudu sisaan__
+  logout: __Kirjaudu ulos__
+  mypage: __Oma sivu__
+  signup: __Rekisteroidy__
+  text1_html: Tietokantamme sis&#228;lt&#228;&#228; useimmat maailman lentokentist&#228;. L&#246;yd&#228;t mm kenttien sijainnin, nimen, IATA koodin ja paljon muuta. Voit my&#246;s hakea tietty&#228; lentokentt&#228;&#228;.
+  text2_html: Voit arvostella kentti&#228;, joilla olet vieraillut, tarkastella muiden kaytt&#228;jien arvosteluja ja tarkastaa kartasta kaikki lentokent&#228;t, jotka olet arvostellut. Rekister&#246;idy saadaksesi kaikki sivun toiminnot k&#228;ytt&#246;&#246;si.
+  text3_html: Sivuiltamme l&#246;yd&#228;t my&#246;s tilastotietoja maailman lentokentist&#228;. Oletko koskaan miettinyt mitk&#228; lentokent&#228;t sijaitsevat korkeimmalla? Mitk&#228; lentokent&#228;t ovat
+    etel&#228;isimpi&#228;? Kaikdn t&#228;m&#228;n l&#246;yd&#228;t tilastotietosivultamme.

@@ -1,0 +1,28 @@
+<div class="page-header">
+<h1>Search results</h1>
+</div>
+<div class="row">
+<div class="span10">
+<%if @search.airfields.count ==  0 %>
+  <div>
+    <p>Sorry, no matches for your search!</p>
+  </div>
+ <%else%>
+   <% @search.airfields.each do |airfield| %>
+    <dl class="dl-horizontal">
+      <dt>Airport Name</dt>
+      <dt>City:</dt>
+      <dt>Country:</dt>
+      <dt>IATA code:</dt>
+      <dd><%= link_to airfield.name, airfield %></dd>
+      <dd><%= airfield.city %></dd>
+      <dd><%= airfield.country %></dd>
+      <dd><%= airfield.iata_faa %></dd>
+    </dl>  
+<%end%>
+<%end%>
+</div>
+<div class="span2">
+<button class=btn"><%= link_to 'Edit your search', edit_search_path %></button>
+</div>
+</div>

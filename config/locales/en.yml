@@ -1,0 +1,23 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  welcome: Welcome
+  welcome_small_html: to worldwide airport facts!
+  about_us_html: About us
+  and_what_html: and what you can find on this website
+  home: __Home__
+  statistics: __Statistics__
+  airports: __Airports__
+  search: __Search__
+  users: __Users__
+  contact: __Contact Us__
+  login: __Login__
+  logout: __Logout__
+  mypage: __My Page__
+  signup: __Sign up__
+  text1_html: Our database includes most of worls's airports. You can check their location, name, IATA code and much more. You can also search for a speficic airport
+  text2_html: You can review airports you have visited, view other users' reviews and view from a map all the airports you have reviewed. To get full advantage of
+    these features, please sign up!
+  text3_html: We also provide statistics on world's airports. Ever wondered which airports are located at highest altitudes? What are the southernmost
+    airports? Check out our awesome statistics.

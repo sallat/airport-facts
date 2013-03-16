@@ -1,0 +1,22 @@
+<div class="page-header">
+<h1>Listing contacts</h1>
+</div>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Subject</th>
+    <th>Comment</th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.subject %></td>
+    <td><%= contact.comment %></td>
+  </tr>
+<% end %>
+</table>
+
+

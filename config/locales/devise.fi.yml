@@ -1,0 +1,55 @@
+ fi:
+  devise:
+    confirmations:
+      confirmed: Tunnuksesi on nyt vahvistettu. Olet kirjautuneena sisalle.
+      send_instructions: Saat hetken kuluttua sahkopostiisi ohjeet tunnuksen vahvistamiseen.
+      send_paranoid_instructions: Mikali sahkopostiosoitteesi on tallennettu jarjestelmaamme, lahetamme sinulle ohjeet tilin vahvistamiseksi muutaman minuutin kuluessa.
+    failure:
+      already_authenticated: Olet jo kirjautunut sisaan.
+      inactive: Tunnustasi ei ole viela aktivoitu.
+      invalid: Epakelpo sahkopostiosoite tai salasana.
+      invalid_token: Epakelpo autentikaatiopoletti.
+      locked: Tunnuksesi on lukittu.
+      timeout: Istuntosi on vanhentunut, ole hyva ja kirjaudu sisaan jatkaaksesi.
+      unauthenticated: Sinun pitaa kirjautua sisaan tai rekisteroitya ennen kuin voit jatkaa.
+      unconfirmed: Sinun taytyy vahvistaa tunnuksesi ennen kuin voit jatkaa.
+    mailer:
+      confirmation_instructions:
+        subject: Vahvistusohjeet
+      reset_password_instructions:
+        subject: Ohjeet salasanan vaihtoon
+      unlock_instructions:
+        subject: Ohjeet tunnuksen lukituksen poistoon
+    omniauth_callbacks:
+      failure: Valtuutus kayttaen palvelua %{kind} epaonnistui, koska "%{reason}".
+      success: Onnistuneesti valtuutettu kayttaen palvelua %{kind}.
+    passwords:
+      no_token: Et voi paasta talle sivulle tulematta salasanannollaussahkopostin kautta. Mikali tulet salasanannollaussahkopostiviestista, varmista etta syotit koko verkko-osoitteen osoiteriville.
+      send_instructions: Saat hetken kuluttua sahkopostiisi ohjeet salasanan vaihtoon.
+      send_paranoid_instructions: Mikali sahkopostiosoitteesi on tallennettu jarjestelmaamme, lahetamme salasananpalautuslinkin sahkopostiisi muutaman minuutin kuluessa.
+      updated: Salasanasi on nyt vaihdettu. Olet kirjautuneena sisalle.
+      updated_not_active: Salasanasi on vaihdettu.
+    registrations:
+      destroyed: Nakemiin! Tunnuksesi on nyt poistettu. Toivottavasti naemme sinut viela uudelleen.
+      signed_up: Tervetuloa! Rekisterointisi onnistui.
+      signed_up_but_inactive: Olet rekisteroitynyt onnistuneesti. Et kuitenkaan voi kirjautua ennen kuin tilisi on aktivoitu.
+      signed_up_but_locked: Olet rekisteroitynyt onnistuneesti. Et kuitenkaan voi kirjautua, koska tilisi on lukittu.
+      signed_up_but_unconfirmed: Sahkopostiisi on lahetetty vahvistusviesti. Avaa viestissa oleva linkki aktivoidaksesi tilisi.
+      update_needs_confirmation: Tiedot paivitettiin onnistuneesti, mutta meidan taytyy viela varmistaa uusi sahkopostiosoitteesi. Tarkista sahkopostisi ja klikkaa varmistuslinkkia varmistaaksesi uuden sahkopostiosoitteesti.
+      updated: Tunnuksesi on paivitetty.
+    sessions:
+      signed_in: Sisaankirjautuminen onnistui.
+      signed_out: Uloskirjautuminen onnistui.
+    unlocks:
+      send_instructions: Saat hetken kuluttua sahkopostiisi ohjeet tunnuksesi lukituksen poistoon.
+      send_paranoid_instructions: Jos tilisi on olemassa, muutaman minuutin kuluttua sahkopostiisi on lahetetty ohjeet kuinka poistaa lukitus.
+      unlocked: Tunnuksesi on nyt avattu. Olet kirjautuneena sisalle.
+  errors:
+    messages:
+      already_confirmed: on jo vahvistettu, yrita kirjautua sisaan uudelleen
+      expired: on vanhentunut, pyyda uutta.
+      not_found: ei loytynyt
+      not_locked: ei ollut lukittu
+      not_saved:
+        one: ! '1 virhe esti %{resource} tallentamisen:'
+        other: ! '%{count} virhetta esti %{resource} tallentamisen:'

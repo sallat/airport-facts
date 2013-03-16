@@ -1,0 +1,17 @@
+<%= simple_form_for(@search, :html => {:class => 'form-horizontal' }) do |f| %>
+ <%= f.error_notification %>
+ <legend>You can fill in one or more search fields, or even none, if you want a list of all airports!</legend>
+ 
+ <div class="form-inputs">
+  <%= f.input :name, :placeholder => "Name of the airport" %>
+  <%= f.input :city, :placeholder => "City" %>
+  <%= f.input :country, :placeholder => "Country" %>
+  <%= f.input :iata, :placeholder => "IATA code" %>
+  <%= f.input :altitude, :placeholder => "Minimum altitude" %>
+ </div>
+  <div class="control-group">
+  <div class="controls">
+  <%= f.button :submit, "Search" %>
+  </div>
+  </div>
+<% end %>

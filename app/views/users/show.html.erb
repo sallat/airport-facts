@@ -1,0 +1,70 @@
+<% if current_user == @user || admin_signed_in? %>
+<div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Account
+    <span class="caret"></span>
+  </a>
+<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+  <li><a tabindex="-1" href="<%= edit_user_registration_path %>">Edit Account</a></li>
+</ul>
+</div>
+<%end%>
+<div class="page-header">
+<% if current_user == @user %>    
+<h1>My Very Own Account</h1>
+<%else%>
+<h1><%= @user.name %>'s page</h1>
+<%end%>
+</div>
+<div class="row">
+  <div class="span9">
+<div class="mypic">
+<%= image_tag @user.avatar.url(:thumb), :class=> "img-circle" %>
+</div>
+
+<dl class="dl-horizontal">
+<dt>User Name:</dt>
+<% if current_user == @user || admin_signed_in? %>
+    <dt>Email:</dt>
+<%end%>
+<dd><%= @user.name %></dd>
+<% if current_user == @user || admin_signed_in? %>
+<dd><%= @user.email if @user.email %></dd>
+<%end%>
+</dl>
+</div>
+<div class="span3">
+<a class="twitter-timeline" href="https://twitter.com/IATA" data-widget-id="279025995271512064" width="250" height="300">Tweets by @IATA</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
+<div class="page-header">    
+<h2>I have reviewed <small>all these airports</small></h2>
+</div>
+<div class="row">
+<div class="span5">
+  <dl class="dl-horizontal">
+  <% @airfields.each do |a| %>
+  <dt>Airport Name</dt>
+  <dt>City</dt>
+  <dt>Country</dt>
+  <dd><%= link_to a.name, a %></dd>
+  <dd><%= a.city %></dd>
+  <dd><%= a.country %></dd>
+  <%end%>
+  </dl>
+</div>
+
+<div class="span7">
+<% if @reviews.count != 0 %>
+  
+    <%= gmaps({
+  "map_options" => {"auto_zoom" => false, "zoom" => 1 },
+  "markers" => {"data" => @json }
+  })
+  %>
+<%else%>
+  <p>I have yet to review any airports.</p>
+<%end%>
+</div>
+</div>

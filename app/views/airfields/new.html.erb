@@ -1,0 +1,26 @@
+<div class="page-header">
+<h1>Update Airport Details <small>from the source</small></h1>
+</div>
+<p>Please note that if you are updating these records on Heroku, the action will bring up an application error! </br>
+The airports will still be updated but it will take upto 15 minutes due to the size of the source. This means that the application </br>
+will be out of use for as long as the update takes. That's why you should only perform this action during maintenance breaks to avoid <br>
+unnecessary disruptions to users!</p>
+
+<%= form_for(@airfield) do |f| %>
+  <% if @airfield.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@airfield.errors.count, "error") %> prohibited this airfield from being saved:</h2>
+
+      <ul>
+      <% @airfield.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="actions">
+    <%= f.submit "Update the Airports" %>
+</div>
+
+<% end %>

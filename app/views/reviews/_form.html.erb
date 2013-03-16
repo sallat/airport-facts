@@ -1,0 +1,19 @@
+<%= simple_form_for(@review, :html => {:class => 'form-horizontal' }) do |f| %>
+  
+  <legend>Write your review here <i class="icon-pencil"></i></legend>
+
+  <div class="form-inputs">
+    <%= f.input :rating, :collection => 1..5, :as => :radio, :item_wrapper_class => 'inline' %>
+    <%= f.input :review, :as => :text, :input_html => { :cols => 100, :rows => 10, :style => 'width: 400px' }%>
+  </div>
+  
+  <%= f.hidden_field :user_id , :value=>params[:user_id] %>
+
+    <%= f.hidden_field :airfield_id , :value=>params[:airfield_id] %>
+
+  <div class="control-group">
+  <div class="controls">
+    <%= f.button :submit, "Submit Review" %>
+  </div>
+  </div>
+<% end %>
